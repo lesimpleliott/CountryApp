@@ -1,0 +1,197 @@
+
+// VARIABLES & IMPORTS 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+$mainColor: #6e48aa; 
+$secondColor: #9d50bb; 
+$textColor: #2f2f2f; 
+
+// RESET 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+// MAIN 
+body {
+  height: 100vh;
+  background: linear-gradient(to right, $secondColor, $mainColor);
+}
+
+.searchBar {
+    width: 100%;
+    height: 100px;
+    // height: 180px;
+    padding-top: 15px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 3px 3px 5px rgba(#000, .5);
+    position: fixed;
+    z-index: 2;
+    top: 0; 
+    transition: 400ms ease-in-out;
+
+    #inputSearch {
+        min-height: 40px;
+        width: 50%;
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: #6e48aa;
+        border: solid 2px #6e48aa;
+        border-radius: 30px;
+        padding-inline: 10px;
+        box-shadow: 2px 2px 5px rgba(#000, .5);
+    
+        &::placeholder {
+            font-style: italic;
+            color: lightgrey;
+            font-weight: 300;
+        }
+    }
+
+    .toggleFilters {
+        margin-top: 15px;
+        color: $mainColor;
+        font-style: italic;
+        font-size: .8rem;
+        position: relative;
+        cursor: pointer;
+        font-weight: 500;
+
+        &::before {
+            content: '';
+            height: 6px;
+            width: 6px;
+            border-top: solid 2px $secondColor;
+            border-right: solid 2px $secondColor;
+            position: absolute;
+            top: 50%;
+            left: -15px;
+            transform: translateY(-50%) rotate(45deg);
+            transition: transform 200ms ease-in-out;
+        }  
+        
+        &.open {
+            &::before {
+                transform: translateY(-70%) rotate(135deg);
+            }
+        }
+    }
+    
+    .filters {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    opacity: 1;
+    // transform: translateX(0);
+    transition: all 200ms 200ms ease-in-out;
+
+    &.hidden {
+        opacity: 0;
+        // transform: translateX(500px);
+        transition: all 100ms ease-in-out;
+        }
+
+      .range-container {
+          width: 60%;
+          display: flex;
+          gap: 10px;
+          margin-top: 10px;
+          
+          input[type="range"] {
+              width: 100%;
+            }
+        }
+        
+        .btn-container {
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            
+            .btnSort {
+                width: 33%;
+                padding: 5px 20px;
+                border: solid 2px #6e48aa;
+                border-radius: 100px;
+                color: #6e48aa;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 250ms ease-in-out;
+
+                &:hover, 
+                &:active {
+                    transform: scale(1.03);
+                    box-shadow: 2px 2px 5px rgba(#000, .5);
+                }
+            }
+        }
+    }  
+}
+
+.countries-container {
+    width: 100%;
+    margin-top: 150px;
+    padding-bottom: 150px;
+    padding-inline: 3vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    .card {
+        all: unset;
+        flex: 1 0 30%;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        min-width: 300px;
+        padding: 15px 20px;
+        border-radius: 20px;
+        background: #e9e9e9;
+        box-shadow: 3px 3px 10px rgba(#2f2f2f, .5);
+        transition: 200ms ease-in-out;
+        &:hover {
+            transform: scale(1.02);
+        }
+
+        img {
+            height: 70px;
+            // max-height: 70px;
+            width: 100px;
+            object-fit: contain;
+        }
+
+        .content {
+            flex: 1;
+
+            &__country {
+                color: $mainColor;
+                margin-bottom: 10px;
+            }
+            &__capital,
+            &__population,
+            &__codes,
+            &__link {
+                color: $textColor;
+            }
+            
+            &__link {
+                text-decoration: none;
+                font-style: italic;
+                color: grey;
+                font-size: .8rem;
+                margin-top: 5px;
+                &:hover {
+                    color: $mainColor;
+                }
+            }
+        }
+    }
+}

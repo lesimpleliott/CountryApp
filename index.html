@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Country.app</title>
+
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./searchBar.js" defer></script>
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <div class="searchBar">
+      <input type="text" id="inputSearch" placeholder="Rechercher"/>
+      <p class="toggleFilters">Voir les filtres</p>
+        <div class="filters hidden">
+          <div class="range-container">
+              <input type="range" value="24" max="250" id="inputRange"/>
+              <span id="rangeValue">24</span>
+          </div>
+          <div class="btn-container">
+            <button class="btnSort" id="minToMax">Tri croissant</button>
+            <button class="btnSort" id="maxToMin">Tri décroissant</button>
+            <button class="btnSort" id="alpha">Tri A à Z</button>
+          </div>
+        </div>
+      </div>
+
+    <div class="countries-container">
+      <!-- <a class="card" href="#" title="Cliquez pour voir sur la carte" target="_blank">
+        <img src="https://flagcdn.com/fr.svg" alt="drapeau France"/>
+        <div class="content">
+          <h2 class="content__country">France</h2>
+          <p class="content__capital">Capitale : Paris</p>
+          <p class="content__population">Population : 67391582</p>
+          <p class="content__codes">Codes : FRA - FR</p>
+        </div>
+      </a> -->
+      
+    </div>
+</body>
+</html>
+
+<!-- https://flagcdn.com/fr.svg -->
