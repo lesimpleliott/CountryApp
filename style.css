@@ -103,6 +103,7 @@ body {
   width: 33%;
   padding: 5px 20px;
   border: solid 2px #6e48aa;
+  background: rgba(110, 72, 170, 0.1);
   border-radius: 100px;
   color: #6e48aa;
   font-weight: 600;
@@ -112,6 +113,10 @@ body {
 .searchBar .filters .btn-container .btnSort:hover, .searchBar .filters .btn-container .btnSort:active {
   transform: scale(1.03);
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.searchBar .filters .btn-container .btnSort.selectedFilter {
+  background: #6e48aa;
+  color: #fff;
 }
 
 .countries-container {

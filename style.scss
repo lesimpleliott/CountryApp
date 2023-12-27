@@ -118,9 +118,10 @@ body {
             .btnSort {
                 width: 33%;
                 padding: 5px 20px;
-                border: solid 2px #6e48aa;
+                border: solid 2px $mainColor;
+                background: rgba($mainColor, .1);
                 border-radius: 100px;
-                color: #6e48aa;
+                color: $mainColor;
                 font-weight: 600;
                 cursor: pointer;
                 transition: all 250ms ease-in-out;
@@ -129,6 +130,11 @@ body {
                 &:active {
                     transform: scale(1.03);
                     box-shadow: 2px 2px 5px rgba(#000, .5);
+                }
+
+                &.selectedFilter {
+                    background: $mainColor;
+                    color: #fff;
                 }
             }
         }
